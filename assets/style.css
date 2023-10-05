@@ -17,9 +17,9 @@ body {
     width: 400px;
     height: 500px;
     display: flex;
-    flex-direction: column; /* Para centrar verticalmente */
+    flex-direction: column; 
     align-items: center;
-    text-align: center; /* Alinea el contenido de manera central */
+    text-align: center; 
   }
   
 
@@ -92,7 +92,7 @@ section .pantalla-lcd{
 /*section of cuerpo-botones*/
 section .cuerpo-botones{
   width: 100%;
-  height: calc(100% - 160px);
+  height: auto;
   background-color: hsl(223, 31%, 20%);
   border-radius: 8px;
 }
@@ -103,22 +103,43 @@ section .cuerpo-botones{
 
 section .cuerpo-botones .cajaNumeros{
   margin: 10px;
-  background-color: aqua;
-  width: 80%;
-  height: 80%;
+  width: 95%;
+  height: auto;
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between;
   
 }
 
-button{
-  flex-basis: calc(33.33% - 10px);
-  width: 55px;
+.cajaNumeros button{
+  flex-basis: calc(25% - 10px);
+  font-size: 20px;
   height: 40px;
   margin: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
 }
 
+
+
+.botonReset {
+  margin: 10px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.botonReset button{
+  width: 47%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
 
 
 
