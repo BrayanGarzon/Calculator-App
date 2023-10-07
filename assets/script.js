@@ -1,25 +1,82 @@
 const slider = document.getElementById('slider');
 const body = document.body;
-const pantallaLcd = document.getElementById('pantalla-lcd');
+
 const cuerpoBotones = document.getElementById('cuerpo-botones');
 const textCalc = document.getElementById('p');
 const numerosThema = document.querySelectorAll('.numbers');
-const button = document.querySelectorAll('.button');
+
 const buttonIgual = document.getElementById('button-igual');
 const buttonReset = document.getElementById('button-reset');
 const buttonDel = document.getElementById('del');
 
+/*OPERATION OF CALCULATOR */
+const botones = document.querySelectorAll('.button');
+const pantallaLcd = document.getElementById('pantalla-lcd');
+
+botones.forEach(boton =>{
+  boton.addEventListener("click", () =>{
+    
+    const botonApretado = boton.textContent;
+
+    /*conditional of reset */
+    if(boton.id === 'button-reset'){
+      pantallaLcd.textContent = "0"
+      return;
+    }
+
+    /*conditional of del */
+    if (boton.id === 'del'){
+      if(pantallaLcd.textContent.length === 1){
+        pantallaLcd.textContent = "0";
+        
+      }else{
+        pantallaLcd.textContent = pantallaLcd.textContent.slice(0, -1);
+      }
+      
+      return;
+    }
+
+    if(boton.id === 'button-igual'){
+      try{
+        pantallaLcd.textContent = eval(pantallaLcd.textContent);
+      }catch{
+        pantallaLcd.textContent = 'Error!';
+
+      }
+      
+      return;
+    }
+
+
+    if (pantallaLcd.textContent === "0"){
+      pantallaLcd.textContent = botonApretado;
+    }else{
+      pantallaLcd.textContent += botonApretado;
+    }
+
+    
+
+  })
+})
 
 
 
+/* CHANGE THEMA */
 
 
+// Cambiar el tema por defecto al cargar la página
+document.addEventListener("DOMContentLoaded", function () {
+  cambiarTema(1); // Aplicar el tema 1 por defecto
+});
 
-
-
-
+// Cambiar el tema en función del valor del slider
 slider.addEventListener('input', () => {
   const value = parseFloat(slider.value);
+  cambiarTema(value);
+});
+
+
+function cambiarTema(value){
   
   if (value === 1) {
     
@@ -35,9 +92,9 @@ slider.addEventListener('input', () => {
     });
 
     //botones
-    button.forEach(boton =>{
-      boton.style.color = 'hsl(0, 0%, 100%)';
-      boton.style.backgroundColor = 'hsl(28, 16%, 65%)';
+    botones.forEach(boton =>{
+      boton.style.color = 'sl(221, 14%, 31%)';
+      boton.style.backgroundColor = 'hsl(30, 25%, 89%)';
     });
 
 
@@ -48,6 +105,13 @@ slider.addEventListener('input', () => {
     del.style.color = 'hsl(0, 0%, 100%)';
     del.style.backgroundColor = 'hsl(224, 28%, 35%)';
 
+
+    /*styles of texto pantalla */
+    pantallaLcd.style.color = 'hsl(0, 0%, 100%)';
+    pantallaLcd.style.fontSize = '45px';
+    pantallaLcd.style.padding = '10px';
+    pantallaLcd.style.boxSizing = 'border-box';
+    
 
   } else if (value === 2) {
     
@@ -62,7 +126,7 @@ slider.addEventListener('input', () => {
     });
 
     //botones
-    button.forEach(boton =>{
+    botones.forEach(boton =>{
       boton.style.color = 'hsl(60, 10%, 19%)';
       boton.style.backgroundColor = 'hsl(45, 7%, 89%)';
     });
@@ -76,7 +140,11 @@ slider.addEventListener('input', () => {
     del.style.backgroundColor = 'hsl(185, 58%, 25%)';
 
 
-
+    /*styles of texto pantalla */
+    pantallaLcd.style.color = 'hsl(60, 10%, 19%)';
+    pantallaLcd.style.fontSize = '45px';
+    pantallaLcd.style.padding = '10px';
+    pantallaLcd.style.boxSizing = 'border-box';
  
   } else if (value === 3) {
     
@@ -91,13 +159,10 @@ slider.addEventListener('input', () => {
     });
 
     //botones
-    button.forEach(boton =>{
+    botones.forEach(boton =>{
       boton.style.color = 'hsl(52, 100%, 62%)';
       boton.style.backgroundColor = 'hsl(268, 47%, 21%)';
     });
-
-
-
 
 
     
@@ -107,5 +172,47 @@ slider.addEventListener('input', () => {
     buttonReset.style.backgroundColor = 'hsl(281, 89%, 26%)';
     del.style.color = 'hsl(0, 0%, 100%)';
     del.style.backgroundColor = 'hsl(281, 89%, 26%)';
+
+
+    /*styles of texto pantalla */
+    pantallaLcd.style.color = 'hsl(52, 100%, 62%)';
+    pantallaLcd.style.fontSize = '45px';
+    pantallaLcd.style.padding = '10px';
+    pantallaLcd.style.boxSizing = 'border-box';
+ 
   }
-});
+}
+
+
+
+
+
+
+/* 
+const botones = document.querySelectorAll('.cajaNumeros button');
+const innerNumero = document.getElementById('numerosOperacion');
+const suma = document.getElementById('suma');
+
+let numerosASumar = [];
+let resultado = '';
+
+
+
+// Agrega un evento click a cada botón
+botones.forEach(boton => {
+  boton.addEventListener('click', () => {
+    // Accede al contenido del botón (el número)
+    const content = boton.textContent;
+   
+    resultado += content
+
+    innerNumero.innerHTML = resultado;
+
+    if (content === '+'){
+      console.log('SUMA')
+    }else{
+      console.log(content)
+    }
+  });
+}); */
+
