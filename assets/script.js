@@ -1,5 +1,6 @@
 const slider = document.getElementById('slider');
 const body = document.body;
+const textThema = document.getElementById('textTheme');
 
 const cuerpoBotones = document.getElementById('cuerpo-botones');
 const textCalc = document.getElementById('p');
@@ -12,6 +13,21 @@ const buttonDel = document.getElementById('del');
 /*OPERATION OF CALCULATOR */
 const botones = document.querySelectorAll('.button');
 const pantallaLcd = document.getElementById('pantalla-lcd');
+
+const estilosSlider = {
+  'value-1': {
+    trackBackground: 'hsl(223, 31%, 20%)',
+    thumbBackground: '#e74c3c',
+  },
+  'value-2': {
+    trackBackground: '...otro color...',
+    thumbBackground: '...otro color...',
+  },
+  'value-3': {
+    trackBackground: '...otro color...',
+    thumbBackground: '...otro color...',
+  },
+};
 
 botones.forEach(boton =>{
   boton.addEventListener("click", () =>{
@@ -104,6 +120,7 @@ function cambiarTema(value){
     buttonReset.style.backgroundColor = 'hsl(224, 28%, 35%)';
     del.style.color = 'hsl(0, 0%, 100%)';
     del.style.backgroundColor = 'hsl(224, 28%, 35%)';
+    textThema.style.color = 'hsl(0, 0%, 100%)';
 
 
     /*styles of texto pantalla */
@@ -111,6 +128,15 @@ function cambiarTema(value){
     pantallaLcd.style.fontSize = '45px';
     pantallaLcd.style.padding = '10px';
     pantallaLcd.style.boxSizing = 'border-box';
+
+
+
+    // Elimina todas las clases de estilo
+    slider.classList.remove('value-1', 'value-2', 'value-3');
+
+    /*styles for slider type range */
+    slider.classList.add('value-1');
+    
     
 
   } else if (value === 2) {
@@ -138,6 +164,7 @@ function cambiarTema(value){
     buttonReset.style.backgroundColor = 'hsl(185, 58%, 25%)';
     del.style.color = 'hsl(0, 0%, 100%)';
     del.style.backgroundColor = 'hsl(185, 58%, 25%)';
+    textThema.style.color = 'hsl(60, 10%, 19%)';
 
 
     /*styles of texto pantalla */
@@ -145,6 +172,13 @@ function cambiarTema(value){
     pantallaLcd.style.fontSize = '45px';
     pantallaLcd.style.padding = '10px';
     pantallaLcd.style.boxSizing = 'border-box';
+
+
+    // Elimina todas las clases de estilo
+    slider.classList.remove('value-1', 'value-2', 'value-3');
+
+    /*styles for slider type range */
+    slider.classList.add('value-2');
  
   } else if (value === 3) {
     
@@ -179,40 +213,19 @@ function cambiarTema(value){
     pantallaLcd.style.fontSize = '45px';
     pantallaLcd.style.padding = '10px';
     pantallaLcd.style.boxSizing = 'border-box';
+
+    textThema.style.color = 'hsl(52, 100%, 62%)';
  
+
+    // Elimina todas las clases de estilo
+    slider.classList.remove('value-1', 'value-2', 'value-3');
+
+    /*styles for slider type range */
+    slider.classList.add('value-3');
+
+    
   }
+  
 }
 
-
-
-
-
-
-/* 
-const botones = document.querySelectorAll('.cajaNumeros button');
-const innerNumero = document.getElementById('numerosOperacion');
-const suma = document.getElementById('suma');
-
-let numerosASumar = [];
-let resultado = '';
-
-
-
-// Agrega un evento click a cada botón
-botones.forEach(boton => {
-  boton.addEventListener('click', () => {
-    // Accede al contenido del botón (el número)
-    const content = boton.textContent;
-   
-    resultado += content
-
-    innerNumero.innerHTML = resultado;
-
-    if (content === '+'){
-      console.log('SUMA')
-    }else{
-      console.log(content)
-    }
-  });
-}); */
 
