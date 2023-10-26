@@ -1,26 +1,24 @@
-# Calculator app
+# Calculadora Web
 
-![Design preview for the Calculator app coding challenge](./design/desktop-preview.jpg)
+![Calculadora Screenshot](/images/CallculatorApp.png)
 
-## Welcome! 👋
+Esta es una calculadora web simple creada con HTML, CSS y JavaScript que te permite realizar operaciones matemáticas básicas de forma interactiva en tu navegador.
 
-Thanks for watching this front-end coding challenge and its solution.
+## Características
 
+- Suma, resta, multiplica y divide números.
+- Botones numéricos y operadores claramente visibles.
+- Interfaz de usuario amigable y responsive.
 
+## Uso
 
-**To complete this challenge, you need a good knowledge of HTML, CSS and JavaScript.**
+Para ejecutar la calculadora localmente, simplemente clona este repositorio y abre `index.html` en tu navegador.
 
-## The challenge
+## Capturas de Pantalla
 
-The challenge is to develop a calculator app and make it look as close as possible to the design and add the functionality.
-
-
-Your users should be able to:
-
-- See how the size of elements adjusts based on your device's screen size.
-- Perform mathematical operations such as addition, subtraction, multiplication and division.
-- Adjust the color theme according to your preferences.
+![Screenshot 1](/images/CallculatorApp.png)
 
 
-## Solution!
-For the development of this app I used javascript, html and css, I supported 100% in the manipulation of the DOM and responsive styles for the different views.
+## Contribuciones
+
+Si deseas contribuir, por favor [abre un issue](https://github.com/BrayanGarzon) o envía una solicitud de pull request. Estoy abierto a mejoras y nuevas características.
