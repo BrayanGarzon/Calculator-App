@@ -4,7 +4,7 @@
     "image": "https://github.com/BrayanGarzon/Calculator-App/blob/main/images/CallculatorApp.png?raw=true",
     "frameworks": ["JavaScript", "Html", "CSS"],
     "url_repo": "https://github.com/BrayanGarzon/Calculator-App.git",
-    "url_live": "https://todo-app-mf25.vercel.app/",
+    "url_live": "https://calculator-app-mocha-two.vercel.app/",
     "fecha": "20/10/2023"
   }
   
